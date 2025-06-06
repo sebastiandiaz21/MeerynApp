@@ -1,0 +1,138 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Adjusted for a more vibrant and child-friendly theme */
+    --background: 45 60% 96%; /* Softer, creamy off-white */
+    --foreground: 220 25% 25%; /* Dark, slightly desaturated blue for text */
+
+    --card: 0 0% 100%; /* White cards for contrast */
+    --card-foreground: 220 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 25%;
+
+    --primary: 205 88% 60%; /* Brighter, engaging blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 200 70% 90%; /* Lighter, softer blue for secondary elements */
+    --secondary-foreground: 220 20% 35%;
+
+    --muted: 210 40% 95%; /* Very light grey-blue for muted backgrounds */
+    --muted-foreground: 210 20% 50%; /* Greyer text for muted foreground */
+
+    --accent: 35 100% 62%; /* Vibrant, cheerful orange */
+    --accent-foreground: 0 0% 100%; /* White text on accent for better contrast */
+
+    --destructive: 0 75% 55%; /* Clear red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 85%; /* Softer border color */
+    --input: 210 30% 92%; /* Light input background */
+    --ring: 205 80% 55%; /* Focus ring matching primary */
+    
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem; /* Slightly larger radius for a softer feel */
+
+    /* Sidebar remains similar for consistency but uses new base colors */
+    --sidebar-background: 200 60% 94%;
+    --sidebar-foreground: 220 25% 25%;
+    --sidebar-primary: 205 88% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 100% 62%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 200 30% 80%;
+    --sidebar-ring: 205 80% 55%;
+  }
+
+  .dark {
+    --background: 220 20% 12%; /* Dark blue-grey */
+    --foreground: 210 30% 92%; /* Light grey-blue text */
+
+    --card: 220 20% 15%; /* Slightly lighter card background */
+    --card-foreground: 210 30% 92%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 30% 92%;
+
+    --primary: 205 80% 65%; /* Vibrant blue for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 28%; /* Darker secondary */
+    --secondary-foreground: 210 30% 85%;
+
+    --muted: 220 15% 22%;
+    --muted-foreground: 210 25% 70%;
+
+    --accent: 35 95% 68%; /* Vibrant orange for dark mode */
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 35%;
+    --input: 220 15% 25%;
+    --ring: 205 80% 58%;
+    
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Sidebar dark theme */
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 210 30% 92%;
+    --sidebar-primary: 205 80% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 95% 68%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 205 80% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply antialiased; /* Ensure smooth fonts */
+  }
+  /* Custom scrollbar for a more integrated look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/70;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+/* Additional playful text shadow for headlines if desired */
+.text-shadow-playful {
+  text-shadow: 2px 2px 0px hsl(var(--primary) / 0.2);
+}
+.dark .text-shadow-playful {
+  text-shadow: 2px 2px 0px hsl(var(--primary) / 0.4);
+}
